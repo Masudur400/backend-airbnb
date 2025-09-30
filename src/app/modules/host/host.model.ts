@@ -12,6 +12,6 @@ const hostSchema = new Schema<HostDocument>({
     details: { type: String },
     averageRating: { type: Number, default: 0 },
     totalRatings: { type: Number, default: 0 }, 
-}, { timestamps: true, versionKey: false });  
+}, { timestamps: true, versionKey: false })  
 
-export default mongoose.model<HostDocument>('Host', hostSchema);
+export default mongoose.model<HostDocument>('Host', hostSchema)

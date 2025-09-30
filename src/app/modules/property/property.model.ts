@@ -3,21 +3,23 @@ import { IProperty } from "./property.interface";
 
 const PropertyRatingSchema = new Schema({
   userName: { type: String, required: true },
+  image: { type: String, required: true },
   userLocation: { type: String, required: true },
   createAt: { type: Date, default: Date.now },
   howMuchStay: { type: String, enum: ["Stayed one night", "Stayed one Day", "Stayed a few nights"], required: true },
   givenRating: { type: Number, required: true },
   description: { type: String }
-});
+})
 
 const FeatureSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String }
-});
+})
 
 const PropertySchema = new Schema<IProperty>({
   title: { type: String, required: true },
   subTitle: { type: String },
+   location: { type: String, required: true },
   stay: { 
     type: String, 
     enum: ["one night", "one Day", "one day two night", "to day one night"], 
@@ -43,6 +45,6 @@ const PropertySchema = new Schema<IProperty>({
   locationRating: { type: Number, default: 0 },
   valueRating: { type: Number, default: 0 },
   include: [{ type: String }]
-}, { timestamps: true, versionKey: false });
+}, { timestamps: true, versionKey: false })
 
-export const Property = mongoose.model<IProperty>("Property", PropertySchema);
+export const Property = mongoose.model<IProperty>("Property", PropertySchema)

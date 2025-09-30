@@ -35,9 +35,7 @@ app.get("/", (req: Request, res: Response) => {
         message: "Welcome to Tour Management System Backend"
     })
 })
-
-
-// app.use(globalErrorHandler)
+ 
 
 app.use(notFound)
 

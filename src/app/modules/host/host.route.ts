@@ -1,11 +1,11 @@
 import express from 'express'; 
-import { hostController } from './host.controller';
+import { hostController } from './host.controller'
 
-const router = express.Router();
+const router = express.Router()
 
-router.post('/', hostController.createHost);  
-router.get('/', hostController.getAllHosts);  
-router.get('/:id', hostController.getHostById);  
-router.patch('/:id', hostController.addRating); 
+router.post('/', hostController.createHost) 
+router.get('/', hostController.getAllHosts)  
+router.get('/:id', hostController.getHostById)  
+router.patch('/:id', hostController.addRating) 
 
-export const HostRoutes = router;
+export const HostRoutes = router
