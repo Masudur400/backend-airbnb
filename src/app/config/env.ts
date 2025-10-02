@@ -43,9 +43,9 @@ const loadEnvVariables = (): EnvConfig => {
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         DB_URL: process.env.DB_URL!,
         NODE_ENV: process.env.NODE_ENV as "development" | "production",
-        FRONTEND_URL1: process.env.FRONTEND_URL as string,
-        FRONTEND_URL2: process.env.FRONTEND_URL as string,
-        FRONTEND_URL3: process.env.FRONTEND_URL as string,
+        FRONTEND_URL1: process.env.FRONTEND_URL1 as string,
+        FRONTEND_URL2: process.env.FRONTEND_URL2 as string,
+        FRONTEND_URL3: process.env.FRONTEND_URL3 as string,
         BCRYPT_SALT_ROUND: process.env.BCRYPT_SALT_ROUND as string,
         JWT_ACCESS_SECRET: process.env.JWT_ACCESS_SECRET as string,
         JWT_ACCESS_EXPIRES: process.env.JWT_ACCESS_EXPIRES as string,

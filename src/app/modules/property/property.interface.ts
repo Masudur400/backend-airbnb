@@ -20,7 +20,7 @@ export interface IProperty extends Document {
   title: string
   subTitle: string
   location: string
-  stay: "one night" | "one Day" | "one day two night" | "to day one night"
+  stay: "one night" | "one Day" | "one day two night" | "two day one night"
   price: number
   guest: number
   bedroom: number

@@ -65,10 +65,25 @@ const addPropertyRating = async (propertyId: string, ratingData: IPropertyRating
 
 const getLocations = async () => {
   const locations = await Property.aggregate([
-    { $group: { _id: "$location", count: { $sum: 1 },maxGuest: { $max: "$guest" } } },
-    { $project: { _id: 0, location: "$_id", count: 1 , maxGuest: 1} }
+    { 
+      $group: { 
+        _id: "$location", 
+        count: { $sum: 1 }, 
+        maxGuest: { $max: { $toInt: "$guest" } }, 
+        minGuest: { $min: { $toInt: "$guest" } } 
+      } 
+    },
+    { 
+      $project: { 
+        _id: 0, 
+        location: "$_id", 
+        count: 1, 
+        maxGuest: 1,
+        minGuest: 1
+      }  
+    }
   ]);
-  return locations
+  return locations;
 };
 
 export const propertyService = {
