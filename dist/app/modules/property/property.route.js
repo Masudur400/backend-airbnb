@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PropertyRoute = void 0;
+const express_1 = require("express");
+const property_controller_1 = require("./property.controller");
+const router = (0, express_1.Router)();
+router.post("/", property_controller_1.propertyController.createProperty);
+router.get("/", property_controller_1.propertyController.getAllProperties);
+router.get("/locations", property_controller_1.propertyController.getLocations);
+router.get("/:id", property_controller_1.propertyController.getPropertyById);
+router.put("/:id", property_controller_1.propertyController.updateProperty);
+router.delete("/:id", property_controller_1.propertyController.deleteProperty);
+router.post("/:propertyId", property_controller_1.propertyController.addPropertyRating);
+exports.PropertyRoute = router;

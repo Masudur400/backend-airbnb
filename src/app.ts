@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors({
     origin: [
         envVars.FRONTEND_URL1,
-        envVars.FRONTEND_URL1,
-        envVars.FRONTEND_URL1
+        envVars.FRONTEND_URL2,
+        envVars.FRONTEND_URL3
     ],
     credentials: true
 }))
